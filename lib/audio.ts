@@ -1,5 +1,4 @@
-// Gnani accepts WAV/MP3/OGG/FLAC/AAC/M4A, but browsers record WebM/MP4.
-// So we convert whatever the microphone gave us into a 16 kHz mono WAV in the browser.
+
 
 function encodeWav(samples: Float32Array, sampleRate: number): Blob {
   const buffer = new ArrayBuffer(44 + samples.length * 2);

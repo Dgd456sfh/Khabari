@@ -1,10 +1,8 @@
 import type { MandiRow, MarketAgg } from "./types";
-
-/** Fold all varieties of one mandi into one line (mean of modal prices, widest min-max). */
 const marketsMemo = new WeakMap<MandiRow[], MarketAgg[]>();
 const statesMemo = new WeakMap<MarketAgg[], { state: string; median: number; count: number }[]>();
 
-/** Same rows array in, same answer out: the 8,000-row fold runs once per download, not per request. */
+
 export function toMarkets(rows: MandiRow[]): MarketAgg[] {
   const hit = marketsMemo.get(rows);
   if (hit) return hit;
@@ -73,7 +71,7 @@ export function median(xs: number[]): number {
 }
 
 export interface Summary {
-  median: number; // Rs per quintal
+  median: number; 
   count: number;
   lo: MarketAgg;
   hi: MarketAgg;

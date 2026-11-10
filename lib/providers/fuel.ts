@@ -2,12 +2,7 @@ import { SOURCES } from "../catalog";
 import { record, series } from "../store";
 import type { Current, ForecastBlock, Product, SeriesPoint } from "../types";
 
-/*
- * Petrol and diesel: official retail selling prices published daily by PPAC
- * (Petroleum Planning & Analysis Cell, Ministry of Petroleum & Natural Gas).
- * PPAC's free daily notices cover the Delhi IOCL outlet. Other cities are NOT available
- * from this source, so Khabri never pretends otherwise.
- */
+
 
 const LIST_URL = "https://ppac.gov.in/archives/impnews";
 const CACHE_MS = 30 * 60 * 1000;

@@ -12,11 +12,7 @@ function fail(status: number, code: string, message: string) {
   return NextResponse.json(body, { status });
 }
 
-/**
- * One endpoint for both the AI chat box and the dashboard dropdowns.
- * Body: { question?, lang?, productId?, category?, state?, district?, city?, horizon? }
- * Either `question` or `productId` / `category` must be given.
- */
+
 export async function POST(req: Request) {
   const b = (await req.json().catch(() => null)) as Record<string, unknown> | null;
   if (!b || typeof b !== "object") return fail(400, "BAD_JSON", "Send a JSON body.");

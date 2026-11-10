@@ -94,9 +94,7 @@ export function detectLang(q: string, pref: LangPref): Lang {
   return "en";
 }
 
-/* ------------------------------------------------------------------ */
-/* Places                                                             */
-/* ------------------------------------------------------------------ */
+
 
 const REPLACEMENTS: [RegExp, string][] = [
   [/chhattisgarh|chattisgarh/g, "chattisgarh"],

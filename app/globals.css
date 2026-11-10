@@ -1269,29 +1269,28 @@ td,
   color: #263445;
 }
 
-/* Hero highlighted heading remains blue */
+
 .hero h1 span {
   color: #559fdf;
 }
 
-/* Dashboard secondary label */
+
 .dash-title span {
   color: #475569;
 }
 
-/* Chat text */
+
 .msg.khabri .bubble {
   color: #172b42;
 }
 
-/* Previous/current price labels */
 .stat .v small,
 .stat.big .where,
 .stat.big .k {
   color: #263445;
 }
 
-/* Table and chart text */
+
 th,
 td .sub-line,
 .chart .axis {
@@ -1299,13 +1298,13 @@ td .sub-line,
   color: #263445;
 }
 
-/* Footer */
+
 .foot,
 .foot b {
   color: #475569;
 }
 
-/* Input text */
+
 .ask input {
   color: #111827;
 }

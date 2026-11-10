@@ -10,12 +10,6 @@ export const CATEGORIES: { id: Category; en: string; hi: string }[] = [
   { id: "essentials", en: "Essentials", hi: "\u091C\u093C\u0930\u0942\u0930\u0940 \u0938\u093E\u092E\u093E\u0928" },
 ];
 
-/* ------------------------------------------------------------------ */
-/* Agriculture: every item here is fetched live from Agmarknet.         */
-/* `apiName` must match Agmarknet's commodity spelling. If an item says */
-/* "no prices reported" while you expect data, fix the spelling here.   */
-/* ------------------------------------------------------------------ */
-
 const VEGETABLES = new Set([
   "Onion", "Potato", "Tomato", "Garlic", "Ginger(Green)", "Green Chilli", "Cauliflower", "Cabbage",
   "Brinjal", "Bhindi(Ladies Finger)", "Carrot", "Capsicum", "Pumpkin", "Bottle gourd", "Beetroot",
@@ -75,12 +69,7 @@ const agri: Product[] = [
   apiName: c.api,
 }));
 
-/* ------------------------------------------------------------------ */
-/* Everything else.                                                    */
-/* Only petrol and diesel have a live official feed (PPAC). The others */
-/* are listed so the agent understands them, but they show             */
-/* "Data currently unavailable" until a real feed is connected.        */
-/* ------------------------------------------------------------------ */
+
 
 const R_LPG =
   "No free official API publishes city- or district-wise LPG cylinder prices. IOCL, BPCL and HPCL publish them on their own websites and the price depends on the state and city, so Khabri will not guess one.";

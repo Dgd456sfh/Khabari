@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Gnani Speech-to-Text (REST): POST https://api.vachana.ai/stt/v3, multipart form.
+
 const STT_URL = "https://api.vachana.ai/stt/v3";
 
 function friendly(status: number): string {
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   } else if (lang === "en") {
     form.append("language_code", "en-IN");
   } else {
-    // Auto-detect Indian languages (Prisma v3.0). Pick Hindi or English if your key lacks v3.0.
+    /
     form.append("model", process.env.GNANI_STT_AUTO_MODEL || "prisma-v3.0");
     form.append("language_code", process.env.GNANI_STT_AUTO_CODE || "indic-auto");
   }

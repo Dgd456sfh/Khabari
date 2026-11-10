@@ -1,12 +1,6 @@
 import type { ForecastBlock, SeriesPoint } from "./types";
 
-/*
- * Forecasting from recorded price history.
- * Method: damped-trend exponential smoothing (Holt), parameters chosen by minimising
- * one-step-ahead error on the history itself. No forecast is produced unless there are
- * at least MIN_DAYS recent daily observations. Confidence reflects both how much history
- * exists and how well the model predicted the history it has seen.
- */
+
 
 export const MIN_DAYS = 7;
 const MAX_GAP_DAYS = 3;

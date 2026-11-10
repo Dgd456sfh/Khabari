@@ -176,7 +176,7 @@ async function download(commodity: string): Promise<MandiRow[]> {
   const key = requireKey();
   let rows = await fetchAll(key, commodity, MAX_PAGES);
 
-  // Keep only the freshest days so an old report never passes as today's price.
+  
   const newest = rows.reduce((m, r) => Math.max(m, r.ts), 0);
   if (newest > 0) {
     const cutoff = newest - 3 * 24 * 3600 * 1000;

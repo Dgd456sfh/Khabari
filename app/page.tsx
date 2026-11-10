@@ -412,7 +412,7 @@ export default function Home() {
           <input
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder="e.g. Kal tamatar mehenga hoga? · LPG price in Durg"
+            placeholder="e.g. Kal tamatar mehenga hoga? · LPG price in ALL India"
             aria-label="Your question"
             maxLength={300}
           />

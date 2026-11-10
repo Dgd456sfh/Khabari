@@ -1,6 +1,5 @@
 import type { Lang } from "./types";
 
-/* ---------------- numbers as spoken words (Gnani TTS reads words best) ---------------- */
 
 const EN_ONES = [
   "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",

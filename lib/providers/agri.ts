@@ -142,7 +142,7 @@ export async function agri(
   const states = byState(all);
   const local = summarize(scope.markets)!;
 
-  // Record today's snapshot so history (and forecasts) build up over time.
+  
   if (asOfIso) {
     record(`mandi:${api}:IN`, asOfIso, perKg(nat.median));
     for (const s of states) record(`mandi:${api}:S:${s.state}`, asOfIso, perKg(s.median));
@@ -167,7 +167,7 @@ export async function agri(
     hi: { label: `${local.hi.market}, ${local.hi.state}`, value: perKg(local.hi.modal) },
   };
 
-  // Comparison: the states (highlight the selected one) — and the mandis for a local scope.
+  
   const markedState = scope.level === "india" ? null : k(scope.markets[0].state);
   const compare = {
     title: `${product.en} · median price by state`,

@@ -1,24 +1,20 @@
 export type Lang = "hi" | "en";
 export type LangPref = Lang | "auto";
 
-/* ------------------------------------------------------------------ */
-/* Raw mandi data (unchanged from the mandi version)                   */
-/* ------------------------------------------------------------------ */
 
-/** One price report from one mandi for one variety. Prices are Rs per quintal (100 kg). */
 export interface MandiRow {
   state: string;
   district: string;
   market: string;
   variety: string;
-  date: string; // dd/mm/yyyy as published
-  ts: number; // date as a timestamp (0 if unknown)
+  date: string; 
+  ts: number; 
   min: number;
   max: number;
   modal: number;
 }
 
-/** One mandi, with all its varieties folded into a single line. Rs per quintal. */
+
 export interface MarketAgg {
   state: string;
   district: string;
@@ -30,9 +26,7 @@ export interface MarketAgg {
   date: string;
 }
 
-/* ------------------------------------------------------------------ */
-/* Catalog                                                             */
-/* ------------------------------------------------------------------ */
+
 
 export type Category = "agri" | "lpg" | "fuel" | "grocery" | "construction" | "essentials";
 
@@ -41,21 +35,18 @@ export type Provider = "mandi" | "ppac" | "none";
 export interface Product {
   id: string;
   category: Category;
-  sub?: string; // e.g. vegetables, fruits, grains, pulses
+  sub?: string;
   en: string;
   hi: string;
-  unit: string; // what one price is for: "kg", "litre", "14.2 kg cylinder" ...
+  unit: string; 
   aliases: string[];
   provider: Provider;
-  /** Commodity name exactly as Agmarknet spells it (provider "mandi" only). */
+  
   apiName?: string;
-  /** Why no live data exists (provider "none" only). */
+ 
   unavailableReason?: string;
 }
 
-/* ------------------------------------------------------------------ */
-/* Answer returned to the UI                                           */
-/* ------------------------------------------------------------------ */
 
 export interface PlaceSel {
   state?: string;
@@ -119,8 +110,8 @@ export interface Answer {
   ok: true;
   lang: Lang;
   status: AnswerStatus;
-  text: string; // shown on screen
-  speech: string; // sent to Gnani text-to-speech (numbers as words)
+  text: string; 
+  speech: string; 
   parsed: {
     productId: string | null;
     category: Category | null;
@@ -138,9 +129,8 @@ export interface Answer {
   compare: { title: string; unit: string; rows: { label: string; value: number; mark?: boolean }[] } | null;
   table: { title: string; rows: TableRow[] } | null;
   sources: { name: string; url: string }[];
-  updatedAt: string; // when Khabri fetched this (ISO)
-  dataAsOf: string | null; // the date the source says the price is for (dd/mm/yyyy or ISO)
-  notes: string[];
+  updatedAt: string; 
+  dataAsOf: string | null; 
   marketsTotal: number;
 }
 

@@ -2,11 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { SeriesPoint } from "./types";
 
-/*
- * A small price-history store (a JSON file at data/history.json).
- * Government feeds publish today's price only, so Khabri saves what it sees
- * every day. Forecasts are made from this recorded history, never from made-up data.
- */
+
 
 interface Db {
   series: Record<string, Record<string, number>>;
@@ -41,7 +37,7 @@ function scheduleSave() {
       fs.writeFileSync(tmp, JSON.stringify(load()));
       fs.renameSync(tmp, FILE);
     } catch {
-      // History is best-effort: a failed write must never break an answer.
+      
     }
   }, 400);
 }
