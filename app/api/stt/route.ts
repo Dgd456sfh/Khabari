@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   } else if (lang === "en") {
     form.append("language_code", "en-IN");
   } else {
-    /
+    
     form.append("model", process.env.GNANI_STT_AUTO_MODEL || "prisma-v3.0");
     form.append("language_code", process.env.GNANI_STT_AUTO_CODE || "indic-auto");
   }
